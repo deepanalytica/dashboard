@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "horizon-demo",
+  "identity": {
+    "name": "HORIZON",
+    "category": "Estudio de diseño independiente",
+    "tagline": "Ideas que encuentran su forma.",
+    "mission": "Convertir problemas complejos en experiencias claras y memorables.",
+    "audience": "Equipos que construyen productos y servicios con una perspectiva propia.",
+    "positioning": "Un estudio que combina precisión, curiosidad y dirección de arte sin fórmulas repetidas."
+  },
+  "visual": {
+    "colors": {
+      "primary": "#D7FE4A",
+      "secondary": "#222B35",
+      "accent": "#F77A5B",
+      "background": "#11151A",
+      "surface": "#20262E",
+      "text": "#F3F5EE"
+    },
+    "typography": {"display": "Arial Black, sans-serif", "body": "Arial, sans-serif"},
+    "artDirection": {
+      "keywords": ["tipografía protagonista", "composición editorial", "contraste preciso"],
+      "avoid": ["cerebros de IA", "gradientes genéricos", "brillos decorativos"],
+      "photography": "Fotografía realista, luminosa, encuadres intencionales; evitar imágenes de stock evidentes."
+    }
+  },
+  "voice": {
+    "tone": ["directo", "concreto", "curioso"],
+    "principles": ["Explicar el beneficio antes de la tecnología", "Usar ejemplos específicos", "Mantener frases naturales"],
+    "avoid": ["revolucionario", "sin precedentes", "llevamos tu marca al siguiente nivel"],
+    "examples": {
+      "do": "Diseñamos una interfaz que explica la información en un vistazo.",
+      "dont": "Revolucionamos el ecosistema con soluciones disruptivas."
+    }
+  },
+  "guidelines": {
+    "dos": ["Priorizar legibilidad y jerarquía", "Usar la paleta aprobada", "Documentar las decisiones de diseño"],
+    "donts": ["Inventar estadísticas", "Alterar proporciones del logotipo", "Publicar afirmaciones sin fuente"],
+    "mandatory": ["Verificar afirmaciones cuantitativas", "Solicitar aprobación humana antes de publicar"],
+    "claimsRequireEvidence": true
+  },
+  "solutions": [
+    {"name": "Diseño de productos digitales", "problem": "Interfaces difíciles de comprender", "outcome": "Flujos claros y medibles"},
+    {"name": "Sistemas de identidad", "problem": "Inconsistencia entre canales", "outcome": "Reglas reutilizables y criterios compartidos"}
+  ],
+  "assets": [],
+  "governance": {
+    "status": "draft",
+    "revision": "0.1.0",
+    "owner": "Equipo de demostración",
+    "updatedAt": "2026-11-05",
+    "source": "Ejemplo ficticio. No representa una marca real ni una aprobación externa.",
+    "approval": null
+  }
+}
