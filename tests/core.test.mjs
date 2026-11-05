@@ -1,0 +1,17 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { validateBrand,contrastRatio,toDesignTokens,toCssVars,compilePrompt,makeFreshBrand } from '../public/lib/core.js';
+const demo=JSON.parse(await readFile(new URL('../brands/horizon-demo.json',import.meta.url),'utf8'));
+const clone=()=>structuredClone(demo);
+test('La demo respeta el contrato estructural',()=>{const v=validateBrand(demo);assert.equal(v.valid,true);assert.equal(v.errors.length,0);assert.ok(v.completeness>=80);});
+test('Rechaza ID traversal',()=>{const b=clone();b.id='../secret';assert.equal(validateBrand(b).valid,false);});
+test('Rechaza paletas incompletas',()=>{const b=clone();b.visual.colors.primary='red';assert.equal(validateBrand(b).valid,false);});
+test('Rechaza recursos javascript',()=>{const b=clone();b.assets=[{name:'test',type:'svg',url:'javascript:alert(1)'}];assert.equal(validateBrand(b).valid,false);});
+test('Rechaza aprobación sin responsable',()=>{const b=clone();b.governance.status='approved';assert.equal(validateBrand(b).valid,false);});
+test('Genera prompt con evidencias y reglas',()=>{const p=compilePrompt(demo,'creative');assert.match(p,/Verificar afirmaciones/);assert.match(p,/No atribuyas a la marca/);assert.match(p,/CREATIVE/);});
+test('Canal inexistente falla',()=>assert.throws(()=>compilePrompt(demo,'unknown')));
+test('Tokens usan estructura compatible con DTCG',()=>{const t=toDesignTokens(demo);assert.equal(t.color.primary.$value,'#D7FE4A');assert.equal(t.font.body.$type,'fontFamily');});
+test('CSS exporta valores declarados',()=>{const css=toCssVars(demo);assert.match(css,/--bil-primary: #D7FE4A/);});
+test('Contraste blanco negro 21:1',()=>assert.equal(contrastRatio('#FFFFFF','#000000'),21));
+test('Marca recién creada es un borrador válido',()=>{const b=makeFreshBrand('Ágora Estudio');assert.equal(b.id,'agora-estudio');assert.equal(b.governance.status,'draft');assert.equal(validateBrand(b).valid,true);});

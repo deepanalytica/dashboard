@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Brand Intelligence Layer: una identidad de marca estructurada, verificable y lista para agentes." />
+  <title>BIL — Brand Intelligence Layer</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Saltar al contenido</a>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="logo" href="#overview" aria-label="Brand Intelligence Layer"><span class="logo-mark">B<span>·</span></span><span class="logo-text">BRAND<br>INTELLIGENCE<br>LAYER <small>01 / STUDIO</small></span></a>
+      <div class="sidebar-section">CAPAS DEL SISTEMA</div>
+      <nav id="navigation" class="navigation" aria-label="Secciones"></nav>
+      <div class="sidebar-bottom"><span class="signal"></span> MOTOR LOCAL ACTIVO <div class="sidebar-meta">SIN CUENTAS · SIN SERVIDOR · SIN TELEMETRÍA</div></div>
+    </aside>
+    <div class="content-shell">
+      <header class="topbar"><div class="breadcrumb">PRAXIOS <span>/</span> SISTEMAS <span>/</span> <strong>BRAND INTELLIGENCE</strong></div><div class="top-actions"><span class="tag-live"><span class="signal"></span> WORKSPACE LOCAL</span><button id="import-button" class="button subtle">Importar JSON</button><button id="export-button" class="button primary">Exportar marca <span aria-hidden="true">↗</span></button><input id="file-input" type="file" accept=".json,application/json" hidden /></div></header>
+      <main id="workspace" class="workspace"><div class="intro"><div class="eyebrow">SISTEMA OPERATIVO DE IDENTIDAD <span class="decor">——————————</span> V 0.1</div><div class="intro-line"><h1>La identidad,<br><em>como sistema.</em></h1><div class="intro-aside"><span>●</span> Una fuente de criterio para diseñar, escribir y construir sin perder coherencia.</div></div></div>
+        <div class="brand-bar"><div><div class="micro">MARCA SELECCIONADA / <span id="brand-id">—</span></div><div id="brand-name" class="brand-name">Cargando…</div></div><div class="brand-bar-actions"><select id="brand-switch" class="brand-switch" aria-label="Cambiar marca"></select><span id="version" class="version">REV —</span><button id="new-button" class="button bordered">+ Nueva marca</button><button id="snapshot-button" class="button bordered">Guardar versión</button></div></div>
+        <div id="stats" class="stats" aria-label="Estado de la marca"></div>
+        <div class="work-grid"><section id="main-view" class="main-view" aria-live="polite"></section><aside id="inspector" class="inspector" aria-label="Inspector de integridad"></aside></div>
+        <footer class="footer"><span>BIL / BRAND INTELLIGENCE LAYER</span><span>GOBERNANZA EN GIT · EDICIÓN EN NAVEGADOR LOCAL · APROBACIÓN HUMANA</span><span>© 2026</span></footer>
+      </main>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
